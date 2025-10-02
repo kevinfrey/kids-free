@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import zipcodes from 'zipcodes';
-import { KidsMealOffer, Restaurant } from '../types';
+import { DayOfWeek, KidsMealOffer, Restaurant } from '../types';
 
 const SEARCH_RADIUS_MILES = 50;
 
@@ -61,6 +61,7 @@ export function useRestaurantSearch() {
   const [catalog, setCatalog] = useState<Restaurant[]>([]);
   const [isCatalogLoading, setIsCatalogLoading] = useState(true);
   const [catalogError, setCatalogError] = useState<string | null>(null);
+  const [activeDayFilter, setActiveDayFilter] = useState<DayOfWeek | null>(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -104,6 +105,7 @@ export function useRestaurantSearch() {
 
   const search = () => {
     setError(null);
+    setActiveDayFilter(null);
 
     if (isCatalogLoading) {
       setStatus('error');
@@ -173,7 +175,7 @@ export function useRestaurantSearch() {
       return null;
     }
 
-    const offersByDay = results.reduce<Record<string, number>>((acc, restaurant) => {
+    const offersByDay = results.reduce<Partial<Record<DayOfWeek, number>>>((acc, restaurant) => {
       restaurant.matchingOffers.forEach((offer) => {
         acc[offer.day] = (acc[offer.day] ?? 0) + 1;
       });
@@ -183,15 +185,39 @@ export function useRestaurantSearch() {
     return offersByDay;
   }, [results, status]);
 
+  const filteredResults = useMemo(() => {
+    if (!activeDayFilter) {
+      return results;
+    }
+
+    return results
+      .map((restaurant) => {
+        const offersForDay = restaurant.matchingOffers.filter((offer) => offer.day === activeDayFilter);
+
+        if (offersForDay.length === 0) {
+          return null;
+        }
+
+        return {
+          ...restaurant,
+          matchingOffers: offersForDay
+        } satisfies RestaurantResult;
+      })
+      .filter((restaurant): restaurant is RestaurantResult => restaurant !== null);
+  }, [results, activeDayFilter]);
+
   return {
     zip,
     setZip: handleZipChange,
     status,
     error,
     results,
+    filteredResults,
     search,
     summary,
     isCatalogLoading,
-    catalogError
+    catalogError,
+    activeDayFilter,
+    setActiveDayFilter
   };
 }

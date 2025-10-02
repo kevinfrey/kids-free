@@ -1,7 +1,9 @@
+import { useEffect, useRef } from 'react';
 import { RestaurantCard } from './components/RestaurantCard';
 import { SearchForm } from './components/SearchForm';
 import { SearchSummary } from './components/SearchSummary';
 import { useRestaurantSearch } from './hooks/useRestaurantSearch';
+import { DayOfWeek } from './types';
 
 function App() {
   const {
@@ -10,14 +12,36 @@ function App() {
     status,
     error,
     results,
+    filteredResults,
     search,
     summary,
     isCatalogLoading,
-    catalogError
+    catalogError,
+    activeDayFilter,
+    setActiveDayFilter
   } = useRestaurantSearch();
 
   const activeError = error ?? catalogError;
   const isSearching = status === 'searching';
+  const hasResults = filteredResults.length > 0;
+
+  const contentRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (status === 'success' && contentRef.current) {
+      contentRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [status]);
+
+  const handleDaySelect = (day: DayOfWeek) => {
+    setActiveDayFilter((current) => (current === day ? null : day));
+  };
+
+  const handleClearFilter = () => {
+    setActiveDayFilter(null);
+  };
+
+  const totalRestaurants = activeDayFilter ? filteredResults.length : results.length;
 
   return (
     <main className="app-shell">
@@ -71,10 +95,17 @@ function App() {
         </aside>
       </section>
 
-      <section className="content">
+      <section className="content" ref={contentRef}>
         {activeError && <div className="alert alert--error">{activeError}</div>}
 
-        <SearchSummary zip={zip} offerCounts={summary} total={results.length} />
+        <SearchSummary
+          zip={zip}
+          offerCounts={summary}
+          total={totalRestaurants}
+          activeDay={activeDayFilter}
+          onSelectDay={handleDaySelect}
+          onClearFilter={activeDayFilter ? handleClearFilter : undefined}
+        />
 
         {isCatalogLoading && <p className="loading-state">Loading restaurant data…</p>}
 
@@ -102,9 +133,19 @@ function App() {
           </div>
         )}
 
-        {results.length > 0 && (
+        {status === 'success' && !isCatalogLoading && !hasResults && results.length > 0 && (
+          <div className="empty-state">
+            <h2>No offers on {activeDayFilter}</h2>
+            <p>
+              None of the {results.length} nearby restaurants offer kids-eat-free specials on that day.
+              Clear the filter or try another day to explore additional options.
+            </p>
+          </div>
+        )}
+
+        {hasResults && (
           <section className="results" aria-live="polite">
-            {results.map((restaurant) => (
+            {filteredResults.map((restaurant) => (
               <RestaurantCard key={restaurant.id} restaurant={restaurant} />
             ))}
           </section>
