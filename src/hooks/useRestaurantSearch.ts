@@ -1,6 +1,5 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import zipcodes from 'zipcodes';
-import { restaurants } from '../data/restaurants';
 import { KidsMealOffer, Restaurant } from '../types';
 
 const SEARCH_RADIUS_MILES = 50;
@@ -59,14 +58,66 @@ export function useRestaurantSearch() {
   const [status, setStatus] = useState<SearchStatus>('idle');
   const [error, setError] = useState<string | null>(null);
   const [results, setResults] = useState<RestaurantResult[]>([]);
+  const [catalog, setCatalog] = useState<Restaurant[]>([]);
+  const [isCatalogLoading, setIsCatalogLoading] = useState(true);
+  const [catalogError, setCatalogError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadRestaurants = async () => {
+      try {
+        const response = await fetch('/restaurants.json');
+        if (!response.ok) {
+          throw new Error(`Failed to load restaurants: ${response.status}`);
+        }
+        const data: Restaurant[] = await response.json();
+        if (!isMounted) {
+          return;
+        }
+        setCatalog(data);
+        setCatalogError(null);
+      } catch (loadError) {
+        if (!isMounted) {
+          return;
+        }
+        console.error('Failed to load restaurant data', loadError);
+        setCatalog([]);
+        setCatalogError('We could not load the latest restaurant data. Refresh to try again.');
+      } finally {
+        if (isMounted) {
+          setIsCatalogLoading(false);
+        }
+      }
+    };
+
+    loadRestaurants();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const handleZipChange = (value: string) => {
     setZip(sanitizeZip(value));
   };
 
   const search = () => {
-    setStatus('searching');
     setError(null);
+
+    if (isCatalogLoading) {
+      setStatus('error');
+      setResults([]);
+      setError('We are still loading restaurant data. Please try again in a moment.');
+      return;
+    }
+
+    if (catalogError) {
+      setStatus('error');
+      setResults([]);
+      setError(catalogError);
+      return;
+    }
 
     if (zip.length !== 5) {
       setStatus('error');
@@ -87,7 +138,9 @@ export function useRestaurantSearch() {
     const originLat = Number(lookup.latitude);
     const originLon = Number(lookup.longitude);
 
-    const withinRadius = restaurants
+    setStatus('searching');
+
+    const withinRadius = catalog
       .map((restaurant) => {
         const distance = haversineDistance(
           originLat,
@@ -137,6 +190,8 @@ export function useRestaurantSearch() {
     error,
     results,
     search,
-    summary
+    summary,
+    isCatalogLoading,
+    catalogError
   };
 }

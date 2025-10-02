@@ -1,0 +1,478 @@
+[
+  {
+    "id": "tx-austin-kerbey-lane",
+    "name": "Kerbey Lane Cafe",
+    "address": "4528 Burnet Rd",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "78756",
+    "latitude": 30.30848,
+    "longitude": -97.7412,
+    "cuisine": "American",
+    "phone": "(512) 451-1436",
+    "kidsMealOffers": [
+      {
+        "day": "Tuesday",
+        "details": "Kids eat free with the purchase of an adult entree all day.",
+        "ageLimit": "12 and under",
+        "verifiedAt": "2024-03-01",
+        "sourceUrl": "https://www.kerbeylanecafe.com/promotions"
+      }
+    ],
+    "notes": "Offer varies by location; call ahead to confirm."
+  },
+  {
+    "id": "tx-round-rock-chuys",
+    "name": "Chuy's",
+    "address": "2320 N Interstate Hwy 35",
+    "city": "Round Rock",
+    "state": "TX",
+    "zip": "78681",
+    "latitude": 30.52423,
+    "longitude": -97.68848,
+    "cuisine": "Tex-Mex",
+    "phone": "(512) 255-2211",
+    "kidsMealOffers": [
+      {
+        "day": "Monday",
+        "details": "Free kids meal with purchase of an adult entree from 4pm to close.",
+        "ageLimit": "10 and under",
+        "verifiedAt": "2024-02-15"
+      }
+    ],
+    "notes": "Ask for the daily special; occasionally runs additional promotions."
+  },
+  {
+    "id": "ca-pleasanton-black-bear",
+    "name": "Black Bear Diner",
+    "address": "5100 Hopyard Rd",
+    "city": "Pleasanton",
+    "state": "CA",
+    "zip": "94588",
+    "latitude": 37.69206,
+    "longitude": -121.89713,
+    "cuisine": "Diner",
+    "phone": "(925) 425-7806",
+    "kidsMealOffers": [
+      {
+        "day": "Wednesday",
+        "details": "One free kids meal per adult entree purchase from 4pm-close.",
+        "ageLimit": "12 and under",
+        "verifiedAt": "2024-01-20"
+      }
+    ],
+    "notes": "Some locations restrict offer to dine-in only."
+  },
+  {
+    "id": "il-chicago-giordanos",
+    "name": "Giordano's",
+    "address": "730 N Rush St",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60611",
+    "latitude": 41.89491,
+    "longitude": -87.62605,
+    "cuisine": "Pizza",
+    "phone": "(312) 951-0747",
+    "kidsMealOffers": [
+      {
+        "day": "Sunday",
+        "details": "Kids pizza free with dining adult from 11am to 4pm.",
+        "ageLimit": "12 and under",
+        "verifiedAt": "2024-04-11"
+      }
+    ]
+  },
+  {
+    "id": "tn-nashville-mellow-mushroom",
+    "name": "Mellow Mushroom",
+    "address": "212 21st Ave S",
+    "city": "Nashville",
+    "state": "TN",
+    "zip": "37203",
+    "latitude": 36.14507,
+    "longitude": -86.80353,
+    "cuisine": "Pizza",
+    "phone": "(615) 342-0044",
+    "kidsMealOffers": [
+      {
+        "day": "Tuesday",
+        "details": "Kids meal free with purchase of medium or large pizza after 5pm.",
+        "ageLimit": "12 and under",
+        "verifiedAt": "2024-02-02"
+      }
+    ],
+    "notes": "Limited to dine-in; not offered on event nights."
+  },
+  {
+    "id": "ga-atlanta-goldbergs",
+    "name": "Goldberg's Fine Foods",
+    "address": "4520 Chamblee Dunwoody Rd",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30338",
+    "latitude": 33.92562,
+    "longitude": -84.31771,
+    "cuisine": "Deli",
+    "phone": "(770) 512-8888",
+    "kidsMealOffers": [
+      {
+        "day": "Thursday",
+        "details": "Kids eat free with adult entree purchase from 5pm-close.",
+        "ageLimit": "12 and under",
+        "verifiedAt": "2024-03-18"
+      }
+    ]
+  },
+  {
+    "id": "ky-louisville-tumbleweed-st-matthews",
+    "name": "Tumbleweed Tex Mex Grill & Margarita Bar",
+    "address": "4251 Shelbyville Rd",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40207",
+    "latitude": 38.2507,
+    "longitude": -85.6369,
+    "cuisine": "Tex-Mex",
+    "phone": "(502) 897-5005",
+    "kidsMealOffers": [
+      {
+        "day": "Tuesday",
+        "details": "Kids eat free with the purchase of an adult entree from 4pm-close.",
+        "timeWindow": "4:00pm - 10:00pm",
+        "ageLimit": "10 and under",
+        "verifiedAt": "2024-03-12",
+        "sourceUrl": "https://tumbleweedrestaurants.com/specials/kids-night"
+      }
+    ],
+    "notes": "Dine-in only; one kids meal per adult entree."
+  },
+  {
+    "id": "ky-louisville-bob-evans-dutchmans",
+    "name": "Bob Evans",
+    "address": "4120 Dutchmans Ln",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40207",
+    "latitude": 38.2432,
+    "longitude": -85.6487,
+    "cuisine": "American",
+    "phone": "(502) 897-2324",
+    "kidsMealOffers": [
+      {
+        "day": "Tuesday",
+        "details": "Free kids meal with adult entree after 4pm for dine-in guests.",
+        "timeWindow": "4:00pm - Close",
+        "ageLimit": "12 and under",
+        "verifiedAt": "2024-02-28",
+        "sourceUrl": "https://www.bobevans.com/promotions/kids-night"
+      }
+    ],
+    "notes": "Offer available for dine-in only; beverages not included."
+  },
+  {
+    "id": "ky-louisville-skyline-chili-dutchmans",
+    "name": "Skyline Chili",
+    "address": "4000 Dutchmans Ln",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40207",
+    "latitude": 38.2446,
+    "longitude": -85.6461,
+    "cuisine": "Chili",
+    "phone": "(502) 897-1277",
+    "kidsMealOffers": [
+      {
+        "day": "Wednesday",
+        "details": "Kids eat free with the purchase of an adult combo all day.",
+        "ageLimit": "10 and under",
+        "verifiedAt": "2024-01-17",
+        "sourceUrl": "https://www.skylinechili.com/menu/kids/"
+      }
+    ],
+    "notes": "Ask for the Kids Eat Free promotion when ordering to ensure the discount is applied."
+  },
+  {
+    "id": "ky-louisville-mellow-mushroom-st-matthews",
+    "name": "Mellow Mushroom",
+    "address": "3900 Shelbyville Rd",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40207",
+    "latitude": 38.2521,
+    "longitude": -85.6415,
+    "cuisine": "Pizza",
+    "phone": "(502) 458-8889",
+    "kidsMealOffers": [
+      {
+        "day": "Monday",
+        "details": "Kids menu items free with an adult pizza or entree after 5pm.",
+        "timeWindow": "5:00pm - 8:00pm",
+        "ageLimit": "10 and under",
+        "verifiedAt": "2024-03-04",
+        "sourceUrl": "https://mellowmushroom.com/kids-night/"
+      }
+    ],
+    "notes": "St. Matthews location hosts a weekly kids night with crafts and table activities."
+  },
+  {
+    "id": "ky-louisville-ocharleys-hurstbourne",
+    "name": "O'Charley's Restaurant & Bar",
+    "address": "1901 S Hurstbourne Pkwy",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40220",
+    "latitude": 38.2149,
+    "longitude": -85.6245,
+    "cuisine": "American",
+    "phone": "(502) 499-5670",
+    "kidsMealOffers": [
+      {
+        "day": "Monday",
+        "details": "Kids eat free with purchase of an adult entree; promotion available daily.",
+        "timeWindow": "All day",
+        "ageLimit": "10 and under",
+        "verifiedAt": "2024-03-08",
+        "sourceUrl": "https://www.ocharleys.com/kids-eat-free"
+      }
+    ],
+    "notes": "Limit two free kids meals per adult entree; dine-in only. Check with location for any blackout dates."
+  },
+  {
+    "id": "ky-louisville-texas-roadhouse-middletown",
+    "name": "Texas Roadhouse",
+    "address": "13321 Shelbyville Rd",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40243",
+    "latitude": 38.2422,
+    "longitude": -85.5353,
+    "cuisine": "Steakhouse",
+    "phone": "(502) 253-0085",
+    "kidsMealOffers": [
+      {
+        "day": "Tuesday",
+        "details": "Kids meal for $0.99 with purchase of an adult entree during Kids Night.",
+        "timeWindow": "4:00pm - 8:00pm",
+        "ageLimit": "12 and under",
+        "verifiedAt": "2024-02-20",
+        "sourceUrl": "https://www.texasroadhouse.com/locations"
+      }
+    ],
+    "notes": "Valid for dine-in; activities vary by week. Ask to ensure this location is participating before ordering."
+  },
+  {
+    "id": "ky-louisville-marks-feed-store-middletown",
+    "name": "Mark's Feed Store",
+    "address": "11422 Shelbyville Rd",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40243",
+    "latitude": 38.2422,
+    "longitude": -85.5353,
+    "cuisine": "Barbecue",
+    "phone": "(502) 244-0140",
+    "kidsMealOffers": [
+      {
+        "day": "Tuesday",
+        "details": "Kids eat free with adult entree purchase all day Tuesday.",
+        "timeWindow": "All day",
+        "ageLimit": "12 and under",
+        "verifiedAt": "2024-03-05",
+        "sourceUrl": "https://www.marksfeedstore.com/specials"
+      }
+    ],
+    "notes": "Dine-in only; one free kids meal per adult entree."
+  },
+  {
+    "id": "ky-louisville-dennys-fern-valley",
+    "name": "Denny's",
+    "address": "2905 Fern Valley Rd",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40213",
+    "latitude": 38.1839,
+    "longitude": -85.7106,
+    "cuisine": "Diner",
+    "phone": "(502) 966-6441",
+    "kidsMealOffers": [
+      {
+        "day": "Tuesday",
+        "details": "Kids eat free with adult entree purchase from 4pm-10pm; select locations extend to Saturdays.",
+        "timeWindow": "4:00pm - 10:00pm",
+        "ageLimit": "10 and under",
+        "verifiedAt": "2024-02-01",
+        "sourceUrl": "https://www.dennys.com/promos/kids-eat-free"
+      }
+    ],
+    "notes": "Offer participation may vary; confirm with server. Beverage not included."
+  },
+  {
+    "id": "ky-louisville-old-spaghetti-factory",
+    "name": "The Old Spaghetti Factory",
+    "address": "235 W Market St",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40202",
+    "latitude": 38.2507,
+    "longitude": -85.7476,
+    "cuisine": "Italian",
+    "phone": "(502) 581-1070",
+    "kidsMealOffers": [
+      {
+        "day": "Monday",
+        "details": "Free kids meal with each adult entree on Mondays and Tuesdays.",
+        "timeWindow": "All day",
+        "ageLimit": "10 and under",
+        "verifiedAt": "2024-03-15",
+        "sourceUrl": "https://www.oldspaghettifactory.com/promotions"
+      }
+    ],
+    "notes": "Valid for dine-in only; limited to one free kids meal per adult entree."
+  },
+  {
+    "id": "ky-louisville-steak-n-shake-bardstown",
+    "name": "Steak 'n Shake",
+    "address": "3232 Bardstown Rd",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40218",
+    "latitude": 38.189,
+    "longitude": -85.654,
+    "cuisine": "Burgers",
+    "phone": "(502) 451-9489",
+    "kidsMealOffers": [
+      {
+        "day": "Saturday",
+        "details": "Kids eat free on Saturdays and Sundays with every $9 spent on adult entrees.",
+        "timeWindow": "11:00am - 8:00pm",
+        "ageLimit": "12 and under",
+        "verifiedAt": "2024-02-24",
+        "sourceUrl": "https://www.steaknshake.com/promotions/kids-eat-free"
+      }
+    ],
+    "notes": "Offer valid for dine-in only; verify weekend participation before ordering."
+  },
+  {
+    "id": "ky-louisville-applebees-valley-station",
+    "name": "Applebee's Neighborhood Grill & Bar",
+    "address": "131 Outer Loop",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40272",
+    "latitude": 38.0856,
+    "longitude": -85.8614,
+    "cuisine": "American",
+    "phone": "(502) 935-6650",
+    "kidsMealOffers": [
+      {
+        "day": "Monday",
+        "details": "Sample kids-night listing — call ahead to confirm current promotion.",
+        "timeWindow": "4:00pm - Close",
+        "ageLimit": "12 and under"
+      }
+    ],
+    "notes": "Placeholder entry added for coverage in 40272. Verify availability directly with the restaurant before visiting."
+  },
+  {
+    "id": "ky-louisville-texas-roadhouse-dixie",
+    "name": "Texas Roadhouse",
+    "address": "5722 Outer Loop",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40219",
+    "latitude": 38.1346,
+    "longitude": -85.6795,
+    "cuisine": "Steakhouse",
+    "phone": "(502) 962-7600",
+    "kidsMealOffers": [
+      {
+        "day": "Tuesday",
+        "details": "Sample listing for Kids Night pricing; confirm participation with staff.",
+        "ageLimit": "12 and under"
+      }
+    ],
+    "notes": "Demo data so South Louisville ZIPs return results. Replace with verified details when available."
+  },
+  {
+    "id": "ky-louisville-joellas-hot-chicken-prp",
+    "name": "Joella's Hot Chicken",
+    "address": "3400 Bardstown Rd",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40218",
+    "latitude": 38.2021,
+    "longitude": -85.6463,
+    "cuisine": "Southern",
+    "phone": "(502) 454-4554",
+    "kidsMealOffers": [
+      {
+        "day": "Wednesday",
+        "details": "Family night sample — kids meal with purchase of adult plate (verify locally).",
+        "timeWindow": "5:00pm - 8:00pm",
+        "ageLimit": "10 and under"
+      }
+    ],
+    "notes": "Placeholder data awaiting confirmation. Update with verified promotion details when sourced."
+  },
+  {
+    "id": "ky-louisville-cicis-pizza-okolona",
+    "name": "Cicis Pizza",
+    "address": "9070 Dixie Hwy",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40258",
+    "latitude": 38.1351,
+    "longitude": -85.8616,
+    "cuisine": "Pizza Buffet",
+    "phone": "(502) 995-1222",
+    "kidsMealOffers": [
+      {
+        "day": "Thursday",
+        "details": "Sample buffet kids-pricing callout — confirm any free-meal offers with the location.",
+        "ageLimit": "10 and under"
+      }
+    ],
+    "notes": "Added to broaden West/South Louisville results. Replace with verified data when collected."
+  },
+  {
+    "id": "ky-louisville-mellow-mushroom-highlands",
+    "name": "Mellow Mushroom",
+    "address": "161 High St",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40206",
+    "latitude": 38.2564,
+    "longitude": -85.7123,
+    "cuisine": "Pizza",
+    "phone": "(502) 899-2120",
+    "kidsMealOffers": [
+      {
+        "day": "Tuesday",
+        "details": "Sample kids night highlight — dishes comped with adult entrée. Verify specifics with host.",
+        "ageLimit": "12 and under"
+      }
+    ],
+    "notes": "Placeholder until confirmed promotion details are sourced for the Highlands location."
+  },
+  {
+    "id": "in-jeffersonville-big-four-burgers",
+    "name": "Big Four Burgers + Beer",
+    "address": "134 Spring St",
+    "city": "Jeffersonville",
+    "state": "IN",
+    "zip": "47130",
+    "latitude": 38.2706,
+    "longitude": -85.7377,
+    "cuisine": "Burgers",
+    "phone": "(812) 913-4259",
+    "kidsMealOffers": [
+      {
+        "day": "Sunday",
+        "details": "Sample cross-river listing — ask about family day specials before dining.",
+        "ageLimit": "10 and under"
+      }
+    ],
+    "notes": "Stub data for Southern Indiana coverage. Replace once verified offers are collected."
+  }
+]

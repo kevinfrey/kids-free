@@ -4,7 +4,20 @@ import { SearchSummary } from './components/SearchSummary';
 import { useRestaurantSearch } from './hooks/useRestaurantSearch';
 
 function App() {
-  const { zip, setZip, status, error, results, search, summary } = useRestaurantSearch();
+  const {
+    zip,
+    setZip,
+    status,
+    error,
+    results,
+    search,
+    summary,
+    isCatalogLoading,
+    catalogError
+  } = useRestaurantSearch();
+
+  const activeError = error ?? catalogError;
+  const isSearching = status === 'searching';
 
   return (
     <main className="app-shell">
@@ -21,7 +34,8 @@ function App() {
             zip={zip}
             onZipChange={setZip}
             onSubmit={search}
-            isSearching={status === 'searching'}
+            isSearching={isSearching}
+            isDataLoading={isCatalogLoading}
           />
           <ul className="hero__features">
             <li>Coverage across Jefferson County & nearby suburbs</li>
@@ -58,11 +72,13 @@ function App() {
       </section>
 
       <section className="content">
-        {error && <div className="alert alert--error">{error}</div>}
+        {activeError && <div className="alert alert--error">{activeError}</div>}
 
         <SearchSummary zip={zip} offerCounts={summary} total={results.length} />
 
-        {status === 'idle' && (
+        {isCatalogLoading && <p className="loading-state">Loading restaurant data…</p>}
+
+        {status === 'idle' && !isCatalogLoading && (
           <div className="empty-state">
             <h2>Start with your ZIP code</h2>
             <p>
@@ -72,9 +88,11 @@ function App() {
           </div>
         )}
 
-        {status === 'searching' && <p className="loading-state">Searching nearby locations…</p>}
+        {isSearching && !isCatalogLoading && (
+          <p className="loading-state">Searching nearby locations…</p>
+        )}
 
-        {status === 'success' && results.length === 0 && (
+        {status === 'success' && results.length === 0 && !isCatalogLoading && (
           <div className="empty-state">
             <h2>No offers yet</h2>
             <p>

@@ -5,9 +5,10 @@ interface SearchFormProps {
   onZipChange: (value: string) => void;
   onSubmit: () => void;
   isSearching: boolean;
+  isDataLoading?: boolean;
 }
 
-export function SearchForm({ zip, onZipChange, onSubmit, isSearching }: SearchFormProps) {
+export function SearchForm({ zip, onZipChange, onSubmit, isSearching, isDataLoading }: SearchFormProps) {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     onSubmit();
@@ -28,8 +29,8 @@ export function SearchForm({ zip, onZipChange, onSubmit, isSearching }: SearchFo
           maxLength={5}
           required
         />
-        <button type="submit" disabled={isSearching}>
-          {isSearching ? 'Searching…' : 'Find Offers'}
+        <button type="submit" disabled={isSearching || isDataLoading}>
+          {isDataLoading ? 'Loading data…' : isSearching ? 'Searching…' : 'Find Offers'}
         </button>
       </div>
     </form>
